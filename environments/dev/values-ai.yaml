@@ -8,7 +8,7 @@ config:
   USE_SECRETS_MANAGER: "false"
   SECRET_ID: "fanvault-dev-app-secrets"
   AI_PROVIDER: "openai"
-  S3_PRODUCT_IMAGES_BUCKET: "fanvault-product-images-REPLACE_WITH_ACTUAL_SUFFIX"
+  S3_PRODUCT_IMAGES_BUCKET: "fanvault-dev-product-images-899071933396"
 
 # image.repository and image.tag are updated automatically by CI/CD on each deploy
 image:

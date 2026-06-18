@@ -7,8 +7,8 @@ config:
   NODE_ENV: "development"
   USE_SECRETS_MANAGER: "false"
   COGNITO_REGION: "us-east-1"
-  COGNITO_USER_POOL_ID: "us-east-1_devUserPoolId"
-  COGNITO_CLIENT_ID: "devClientIdxxxxxxxxxxxxxxxx"
+  COGNITO_USER_POOL_ID: "us-east-1_VsEibvEp2"
+  COGNITO_CLIENT_ID: "7p64vafrf82fo5pp9q7cn8v0c2"
   AI_SERVICE_URL: "http://ai-service:8000"
 
 # image.repository and image.tag are updated automatically by CI/CD on each deploy
