@@ -6,7 +6,7 @@ metadata:
 spec:
   parentRefs:
     - name: fanvault-gateway
-      namespace: gateway-system
+      namespace: kgateway-system
   rules:
     - matches:
         - path:
@@ -24,7 +24,7 @@ metadata:
 spec:
   parentRefs:
     - name: fanvault-gateway
-      namespace: gateway-system
+      namespace: kgateway-system
   rules:
     - matches:
         - path:
@@ -42,7 +42,7 @@ metadata:
 spec:
   parentRefs:
     - name: fanvault-gateway
-      namespace: gateway-system
+      namespace: kgateway-system
   rules:
     # 1. Admin Commerce operations
     - matches:
