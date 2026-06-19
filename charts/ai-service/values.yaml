@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: fanvault-ai-service
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: "latest"
 
 service:
