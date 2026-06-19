@@ -1,7 +1,7 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: frontend-route
+  name: auth-route
   namespace: dev
 spec:
   parentRefs:
@@ -11,10 +11,10 @@ spec:
     - matches:
         - path:
             type: PathPrefix
-            value: /
+            value: /api/auth
       backendRefs:
-        - name: dev-frontend
-          port: 80
+        - name: dev-user-service
+          port: 3001
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
@@ -37,27 +37,71 @@ spec:
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: commerce-route
+  name: products-route
   namespace: dev
 spec:
   parentRefs:
     - name: fanvault-gateway
       namespace: kgateway-system
   rules:
-    # 1. Admin Commerce operations
     - matches:
         - path:
             type: PathPrefix
-            value: /api/commerce/admin
+            value: /api/products
       backendRefs:
         - name: dev-commerce-service
           port: 3002
-
-    # 2. General Commerce operations
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: orders-route
+  namespace: dev
+spec:
+  parentRefs:
+    - name: fanvault-gateway
+      namespace: kgateway-system
+  rules:
     - matches:
         - path:
             type: PathPrefix
-            value: /api/commerce
+            value: /api/orders
       backendRefs:
         - name: dev-commerce-service
           port: 3002
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: admin-route
+  namespace: dev
+spec:
+  parentRefs:
+    - name: fanvault-gateway
+      namespace: kgateway-system
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /api/admin
+      backendRefs:
+        - name: dev-commerce-service
+          port: 3002
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: frontend-route
+  namespace: dev
+spec:
+  parentRefs:
+    - name: fanvault-gateway
+      namespace: kgateway-system
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: dev-frontend
+          port: 80
