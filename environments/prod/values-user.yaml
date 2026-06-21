@@ -17,4 +17,4 @@ config:
 
 serviceAccount:
   annotations:
-    eks.amazonaws.com/role-arn: "arn:aws:iam::123456789012:role/fanvault-user-irsa-role"
+    eks.amazonaws.com/role-arn: "arn:aws:iam::773384830607:role/fanvault-user-irsa-role"

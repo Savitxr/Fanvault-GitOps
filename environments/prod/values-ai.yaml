@@ -12,7 +12,7 @@ config:
   USE_SECRETS_MANAGER: "true"
   SECRET_ID: "fanvault-prod-app-secrets"
   AI_PROVIDER: "openai"
-  S3_PRODUCT_IMAGES_BUCKET: "fanvault-product-images-REPLACE_WITH_ACTUAL_SUFFIX"
+  S3_PRODUCT_IMAGES_BUCKET: "fanvault-prod-product-images-773384830607"
 
 # image.repository and image.tag are updated automatically by CI/CD on each deploy
 image:
@@ -21,4 +21,4 @@ image:
 
 serviceAccount:
   annotations:
-    eks.amazonaws.com/role-arn: "arn:aws:iam::899071933396:role/fanvault-ai-irsa-role"
+    eks.amazonaws.com/role-arn: "arn:aws:iam::773384830607:role/fanvault-ai-irsa-role"

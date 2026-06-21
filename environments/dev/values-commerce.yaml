@@ -5,15 +5,15 @@ config:
   NODE_ENV: "development"
   USE_SECRETS_MANAGER: "false"
   COGNITO_REGION: "us-east-1"
-  COGNITO_USER_POOL_ID: "us-east-1_VsEibvEp2"
-  COGNITO_CLIENT_ID: "7p64vafrf82fo5pp9q7cn8v0c2"
+  COGNITO_USER_POOL_ID: "us-east-1_O7cQQXD1P"
+  COGNITO_CLIENT_ID: "3fioa78u18rkf7c3kiqb3sud55"
   AI_SERVICE_URL: "http://ai-service:8000"
 
 serviceAccount:
   annotations:
-    eks.amazonaws.com/role-arn: "arn:aws:iam::899071933396:role/fanvault-commerce-irsa-role"
+    eks.amazonaws.com/role-arn: "arn:aws:iam::773384830607:role/fanvault-commerce-irsa-role"
 
 # image.repository and image.tag are updated automatically by CI/CD on each deploy
 image:
-  repository: "899071933396.dkr.ecr.us-east-1.amazonaws.com/fanvault-dev-commerce-service"
+  repository: "773384830607.dkr.ecr.us-east-1.amazonaws.com/fanvault-dev-commerce-service"
   tag: "sha-initial"
